@@ -53,3 +53,23 @@ export const addBusiness = async (req, res) => {
   }
 };
 
+export const getBusinessById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const business = await prisma.business.findUnique({
+      where: { id: Number(id) },
+      include: { owner: true }
+    });
+
+    if (!business) {
+      return res.status(404).json({ error: "Business not found" });
+    }
+
+    res.json(business);
+  } catch (error) {
+    console.error("GET by ID error:", error);
+    res.status(500).json({ error: "Unable to fetch business" });
+  }
+};
+
