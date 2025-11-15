@@ -3,13 +3,13 @@ import cors from "cors";
 import dotenv from "dotenv";
 import businessRoutes from "./routes/businessRoutes.js";
 
-process.on("uncaughtException", (err) => {
-  console.error("🔥 UNCAUGHT EXCEPTION:", err);
-});
+// process.on("uncaughtException", (err) => {
+//   console.error("🔥 UNCAUGHT EXCEPTION:", err);
+// });
 
-process.on("unhandledRejection", (reason) => {
-  console.error("🔥 UNHANDLED REJECTION:", reason);
-});
+// process.on("unhandledRejection", (reason) => {
+//   console.error("🔥 UNHANDLED REJECTION:", reason);
+// });
 
 console.log(">>> Starting server...");
 

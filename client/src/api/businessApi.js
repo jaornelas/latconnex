@@ -11,3 +11,8 @@ export const addBusiness = async (business) => {
   const res = await axios.post(`${API_URL}/businesses`, business);
   return res.data;
 };
+
+export const getBusinessById = async (id) => {
+    const res = await axios.get(`${API_URL}/businesses/${id}`)
+    return res.data;
+}
