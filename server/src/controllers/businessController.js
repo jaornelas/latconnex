@@ -73,3 +73,23 @@ export const getBusinessById = async (req, res) => {
   }
 };
 
+export const deleteBsuiness = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await prisma.business.delete({
+      where: { id: Number(id) },
+    });
+
+    res.json({ message: "Business has been deleted sucessfully"})
+  } catch (error) {
+    console.log("DELETE error:", error);
+
+    if (error.code === "P2025") {
+      return res.status(404).json({ error: "Businesss not found" });
+    }
+
+    res.status(500).json({ error: "Unable to delete business" });
+  }
+}
+
