@@ -10,8 +10,36 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Latino-Owned Businesses</h1>
+    <div>
+
+      {/* HERO SECTION */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
+          Discover Latino-Owned Businesses
+        </h1>
+        <p className="text-gray-600 mt-3 text-lg">
+          Support your community. Explore restaurants, shops, services, and more.
+        </p>
+      </div>
+
+      {/* BUSINESS GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {businesses.map((biz) => (
+          <Link 
+            key={biz.id}
+            to={`/business/${biz.id}`}
+            className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border hover:border-red-300"
+          >
+            <h2 className="text-xl font-bold text-gray-900">{biz.name}</h2>
+            <p className="text-red-600 font-medium mt-1">{biz.category}</p>
+            <p className="text-gray-600 text-sm mt-2">
+              {biz.city}, {biz.state}
+            </p>
+          </Link>
+        ))}
+
+      </div>
 
       {businesses.length === 0 && (
         <p className="text-gray-500">No businesses yet.</p>

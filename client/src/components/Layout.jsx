@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
     return (
         <div className="min-h-screen bg-gray-50">
 
@@ -18,10 +18,20 @@ export default function Layout({children}) {
                         <Link to="/" className="hover:text-red-600 transition">Home</Link>
                         <Link to="/add" className="hover:text-red-600 transition">Add Business</Link>
                     </div>
-
                 </div>
             </nav>
-        </div>
 
+            {/* Spacing so content isn't behind navbar */}
+            <div className="h-20"></div>
+
+            <main className="max-w-6xl mx-auto px-6 pb-16">
+                {children}
+            </main>
+
+            {/* FOOTER */}
+            <footer className="text-center text-gray-500 py-6 mt-12 text-sm">
+                Built with ❤️ for the Latino community - LatConnex @ {new Date().getFullYear()}
+            </footer>
+        </div>
     )
 }
