@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import AddBusiness from "./pages/AddBusiness";
+import BusinessDetail from "./pages/businessDetail";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<AddBusiness />} />
+        <Route path="/business/:id" element={<BusinessDetail />} />
       </Routes>
     </Router>
   );

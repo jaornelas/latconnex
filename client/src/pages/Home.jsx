@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getBusinesses } from "../api/businessApi";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [businesses, setBusinesses] = useState([]);
@@ -18,11 +19,12 @@ export default function Home() {
 
       <div className="space-y-4">
         {businesses.map(biz => (
-          <div key={biz.id} className="p-4 border rounded shadow">
-            <h2 className="text-xl font-semibold">{biz.name}</h2>
-            <p>{biz.category} • {biz.city}, {biz.state}</p>
-            {biz.description && <p className="text-gray-600">{biz.description}</p>}
-          </div>
+          <Link key={biz.id} to={`/business/${biz.id}`}>
+            <div className="p-4 border rounded shadow hover:bg-gray-50 cursor-pointer">
+              <h2 className="text-xl font-semibold">{biz.name}</h2>
+              <p>{biz.category} • {biz.city}, {biz.state}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
