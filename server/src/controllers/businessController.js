@@ -76,7 +76,7 @@ export const getBusinessById = async (req, res) => {
 export const deleteBusiness = async (req, res) => {
   const { id } = req.params;
   
-  console.log("ID RECEIVED:", id, "NUMBER:", Number(id));
+  // console.log("ID RECEIVED:", id, "NUMBER:", Number(id));  troubleshooting 
 
 
   try {
