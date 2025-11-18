@@ -18,6 +18,6 @@ export const getBusinessById = async (id) => {
 }
 
 export const deleteBusiness = async (id) => {
-    const res = await axios.delete(`${API_URL}/businesses/{id}`);
+    const res = await axios.delete(`${API_URL}/businesses/${id}`);
     return res.data;
 };

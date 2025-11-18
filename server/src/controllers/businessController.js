@@ -75,6 +75,9 @@ export const getBusinessById = async (req, res) => {
 
 export const deleteBusiness = async (req, res) => {
   const { id } = req.params;
+  
+  console.log("ID RECEIVED:", id, "NUMBER:", Number(id));
+
 
   try {
     await prisma.business.delete({
