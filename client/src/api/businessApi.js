@@ -16,3 +16,8 @@ export const getBusinessById = async (id) => {
     const res = await axios.get(`${API_URL}/businesses/${id}`)
     return res.data;
 }
+
+export const deleteBusiness = async (id) => {
+    const res = await axios.delete(`${API_URL}/businesses/{id}`);
+    return res.data;
+};

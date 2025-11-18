@@ -73,7 +73,7 @@ export const getBusinessById = async (req, res) => {
   }
 };
 
-export const deleteBsuiness = async (req, res) => {
+export const deleteBusiness = async (req, res) => {
   const { id } = req.params;
 
   try {
