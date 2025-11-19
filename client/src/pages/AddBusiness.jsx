@@ -19,6 +19,7 @@ export default function AddBusiness() {
     e.preventDefault();
     await addBusiness(form);
     alert("Business added!");
+    window.location.href = "/";
   };
 
   return (

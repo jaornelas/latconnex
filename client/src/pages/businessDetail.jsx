@@ -22,15 +22,12 @@ export default function BusinessDetail() {
     if (!business) return <p className="p-6">Loading..</p>
 
     return (
-        <div className="max-w-3xl mx-auto p-6">
-            <h1 className="text-4xl font-bold mb-3">{business.name}</h1>
+        <div className="bg-white p-6 rounded-xl shadow max-w-3xl mx-auto mt-10">
 
-            <button
-                onClick={handleDelete}
-                className="bg-red-600 text-white px-4 py-2 rounded mb-6"
-                >
-                    Delete Business
-                </button>
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6">
+                <h1 className="text-4xl font-bold">{business.name}</h1>
+            </div>
             <p className="text-xl text-gray-700 mb-2">
                 {business.category} · {business.city}, {business.state}
             </p>
@@ -54,6 +51,12 @@ export default function BusinessDetail() {
             </div>
 
             <hr className="my-6" />
+             <button
+                onClick={handleDelete}
+                className="bg-red-600 text-white px-4 py-2 rounded mb-6"
+            >
+                Delete Business
+            </button>
 
             <p className="text-gray-500">
                 Owner: {business.owner?.name} ({business.owner?.email})
