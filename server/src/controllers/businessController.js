@@ -23,10 +23,11 @@ export const addBusiness = async (req, res) => {
     state,
     phone,
     email,
-    website,
-    lat,
-    lng
+    website
   } = req.body;
+
+  const lat = req.body.lat ? Number(req.body.lat) : null;
+  const lng = req.body.lng ? Number(req.body.lng) : null;
 
   try {
     const newBusiness = await prisma.business.create({
@@ -75,7 +76,7 @@ export const getBusinessById = async (req, res) => {
 
 export const deleteBusiness = async (req, res) => {
   const { id } = req.params;
-  
+
   // console.log("ID RECEIVED:", id, "NUMBER:", Number(id));  troubleshooting 
 
 
@@ -84,7 +85,7 @@ export const deleteBusiness = async (req, res) => {
       where: { id: Number(id) },
     });
 
-    res.json({ message: "Business has been deleted sucessfully"})
+    res.json({ message: "Business has been deleted sucessfully" })
   } catch (error) {
     console.log("DELETE error:", error);
 

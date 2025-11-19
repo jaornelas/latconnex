@@ -27,10 +27,25 @@ export default function BusinessDetail() {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <h1 className="text-4xl font-bold">{business.name}</h1>
+                {business.googleRating && (
+                    <p className="text-yellow-600 font-semibold text-lg mb-2">
+                        ⭐ {business.googleRating} / 5.0
+                    </p>
+                )}
+
             </div>
             <p className="text-xl text-gray-700 mb-2">
                 {business.category} · {business.city}, {business.state}
             </p>
+
+            {business.googleImage && (
+                <img
+                    src={business.googleImage}
+                    alt={business.name}
+                    className="rounded-xl shadow mb-6 w-full max-h-64 object-cover"
+                />
+            )}
+
 
             {business.description && (
                 <p className="text-gray-600 mb-4">{business.description}</p>
@@ -51,7 +66,7 @@ export default function BusinessDetail() {
             </div>
 
             <hr className="my-6" />
-             <button
+            <button
                 onClick={handleDelete}
                 className="bg-red-600 text-white px-4 py-2 rounded mb-6"
             >

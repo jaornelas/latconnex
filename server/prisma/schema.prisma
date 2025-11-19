@@ -17,19 +17,23 @@ model User {
 }
 
 model Business {
-  id          Int       @id @default(autoincrement())
-  name        String
-  description String?
-  category    String
-  address     String
-  city        String
-  state       String
-  phone       String?
-  email       String?
-  website     String?
-  lat         Float?
-  lng         Float?
-  owner       User      @relation(fields: [ownerId], references: [id])
-  ownerId     Int
-  createdAt   DateTime  @default(now())
+  id            Int       @id @default(autoincrement())
+  name          String
+  description   String?
+  category      String
+  address       String
+  city          String
+  state         String
+  lat           Float?
+  lng           Float?
+  website       String?
+  phone         String?
+  email         String?
+  googlePlaceId String?   @unique
+  googleRating  Float?
+  googleImage   String?
+  createdAt     DateTime  @default(now())
+  ownerId       Int
+  owner         User      @relation(fields: [ownerId], references: [id])
 }
+
