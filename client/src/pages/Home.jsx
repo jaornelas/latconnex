@@ -11,6 +11,11 @@ export default function Home() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
+      <img
+      src="src/assets/logo.png"
+      alt="LatConnex Logo"
+      className="h-20 w-auto mb-4 drop-shdow-sm"
+    />
       {/* HERO SECTION */}
       <header className="text-center mb-10">
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -38,7 +43,7 @@ export default function Home() {
                   <h2 className="text-lg font-semibold text-gray-900 truncate">
                     {biz.name}
                   </h2>
-                  <p className="text-red-600 font-medium mt-1 text-sm">
+                  <p className="text-red-600 font-medium mt-2 text-sm">
                     {biz.category}
                   </p>
                 </div>
@@ -53,7 +58,7 @@ export default function Home() {
               )}
 
               <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between gap-2">
                   <span aria-hidden>📍</span>
                   <span>
                     {biz.city}
@@ -61,7 +66,6 @@ export default function Home() {
                     {biz.state}
                   </span>
                 </div>
-                <span className="text-gray-400">View →</span>
               </div>
             </Link>
           ))}

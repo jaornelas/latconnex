@@ -9,6 +9,9 @@ export default function AddBusiness() {
     city: "",
     state: "",
     description: "",
+    phone: "",
+    email: "",
+    website: ""
   });
 
   const handleChange = (e) => {
@@ -23,7 +26,7 @@ export default function AddBusiness() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6">
+    <div className="bg-white p-6 rounded-xl shadow-log max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">Add a Business</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
