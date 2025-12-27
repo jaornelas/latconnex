@@ -10,11 +10,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <img
       src="src/assets/logo.png"
       alt="LatConnex Logo"
-      className="h-20 w-auto mb-4 drop-shdow-sm"
+      className="h-4 w-auto mb-4 drop-shadow-sm"
     />
       {/* HERO SECTION */}
       <header className="text-center mb-10">
