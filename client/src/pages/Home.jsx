@@ -18,11 +18,11 @@ export default function Home() {
     />
       {/* HERO SECTION */}
       <header className="text-center mb-10">
-        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
-          Discover Latino-Owned Businesses
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+          LatConnex
         </h1>
         <p className="text-gray-600 mt-3 text-lg max-w-2xl mx-auto">
-          Support your community — explore restaurants, shops, services, and more.
+          Support your community — explore Latino-owned restaurants, shops, services, and more.
         </p>
         <div className="mt-6">
         </div>

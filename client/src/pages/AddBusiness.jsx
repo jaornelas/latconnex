@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addBusiness } from "../api/businessApi";
 import { searchBusiness, getBusinessDetails } from "../api/googleApi";
 
@@ -22,6 +23,8 @@ export default function AddBusiness() {
 
   const [search, setSearch] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const navigate = useNavigate();
+
 
   // 🔍 Handle text input for Google search
   const handleSearchChange = async (e) => {
@@ -87,6 +90,7 @@ export default function AddBusiness() {
     });
 
     alert("Business added!");
+    navigate("/");;
   };
 
   return (
@@ -160,6 +164,7 @@ export default function AddBusiness() {
 
         <button
           className="w-full bg-red-600 text-white py-3 rounded-lg text-lg hover:bg-red-700 transition shadow-md"
+          onclick="window.location.href='./pages/Home.jsx';"
         >
           Submit
         </button>
