@@ -10,7 +10,21 @@ A network of Latino owned businesses to interact with each other and promote wit
  
 
 ## Instructions
-None required 
+To start the project, open two terminals and run the client and server separately:
+
+1. Client
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
+
+2. Server
+   ```bash
+   cd server
+   npm install
+   npm run dev
+   ```
 
 ## Technologies
 
